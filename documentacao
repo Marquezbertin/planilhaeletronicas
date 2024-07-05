@@ -86,5 +86,47 @@ Copiar código
 python app.py
 Acesse o sistema através do navegador web, geralmente em http://localhost:5000.
 
+Explicação dos Testes Unitários
+Teste de Registro de Nova Venda (test_registro_nova_venda):
+
+Testa se é possível registrar uma nova venda no sistema e verificar se o redirecionamento para a página inicial ocorre corretamente.
+Teste de Edição de Venda Registrada (test_edicao_venda_registrada):
+
+Testa se é possível editar uma venda já registrada e verificar se o redirecionamento para a página inicial ocorre corretamente.
+Teste de Exclusão de Venda Registrada (test_exclusao_venda_registrada):
+
+Testa se é possível excluir uma venda já registrada e verificar se o redirecionamento para a página inicial ocorre corretamente.
+Teste de Validação de Quantidade de Produtos (test_validacao_quantidade_produtos):
+
+Testa se o sistema valida corretamente a entrada de quantidade de produtos como números inteiros.
+Teste de Validação de Valor Unitário dos Produtos (test_validacao_valor_unitario_produtos):
+
+Testa se o sistema valida corretamente a entrada de valor unitário como números válidos.
+Teste de Geração e Envio de Relatório por E-mail (test_geracao_envio_relatorio_email):
+
+Testa se o sistema gera e envia corretamente o relatório de vendas por e-mail.
+Teste de Filtragem de Vendas por Data (test_filtragem_vendas_por_data):
+
+Testa se o sistema filtra corretamente as vendas com base em um intervalo de datas específico.
+Teste de Exportação de Relatório para PDF (test_exportacao_relatorio_pdf):
+
+Testa se o sistema exporta corretamente o relatório de vendas para formato PDF.
+Teste de Importação de Dados de Vendas de Arquivo Externo (test_importacao_dados_vendas_arquivo_externo):
+
+Testa se o sistema importa corretamente dados de vendas de um arquivo CSV externo.
+Teste de Configuração de E-mail para Envio Automático (test_configuracao_email_envio_automatico):
+
+Testa se o administrador pode configurar corretamente as variáveis de ambiente para o envio automático de e-mails.
+Executando os Testes
+Para executar os testes unitários, você pode salvar o código acima em um arquivo test_app.py e executá-lo diretamente via linha de comando:
+
+bash
+Copiar código
+python test_app.py
+Certifique-se de que todas as dependências necessárias estejam instaladas, como Flask, Flask-Testing, Flask-Mail, e outras bibliotecas utilizadas no projeto. Estes testes ajudarão a garantir que cada funcionalidade do sistema esteja funcionando corretamente e de acordo com as especificações definidas nos casos de teste.
+
+
 Considerações Finais
 Este documento fornece uma visão geral detalhada do Sistema de Registro de Vendas, abrangendo desde a arquitetura até os detalhes de implementação, configuração e uso. Certifique-se de ajustar e expandir esta documentação conforme necessário para refletir especificidades adicionais ou alterações futuras no sistema.
+
+
