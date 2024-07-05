@@ -1,0 +1,90 @@
+Documentação Técnica: Sistema de Registro de Vendas
+
+Introdução
+O Sistema de Registro de Vendas é uma aplicação web desenvolvida para permitir o registro de vendas, geração de relatórios em formato Excel e opcionalmente o envio desses relatórios por e-mail. Este documento fornece uma visão geral detalhada da arquitetura, funcionalidades, requisitos, instalação e uso do sistema.
+
+Arquitetura
+O sistema é construído utilizando o framework Flask em Python para o backend e HTML/CSS/JavaScript para o frontend. A manipulação de dados é feita com a biblioteca Pandas para Python, permitindo o processamento e geração de relatórios em formato Excel. O envio de e-mails é gerenciado pelo Flask-Mail, configurado para utilizar um servidor SMTP.
+
+## Componentes Principais
+Backend (Python Flask):
+
+Responsável pelo roteamento de URLs, processamento de dados do formulário e geração de relatórios.
+Utiliza Pandas para manipulação de dados e geração de arquivos Excel.
+Integração com Flask-Mail para envio de e-mails.
+Frontend (HTML/CSS/JavaScript):
+
+Interface de usuário para registro de vendas.
+Validação de entrada de dados utilizando JavaScript.
+Responsividade para adaptação a diferentes tamanhos de tela.
+Banco de Dados:
+Não utilizado neste sistema, pois os dados são manipulados e armazenados temporariamente em memória durante a sessão do usuário.
+
+Funcionalidades
+Registro de Vendas
+Campos de Entrada:
+Código de venda, data, ID da loja, produto, quantidade e valor unitário.
+Validações de entrada para garantir que os campos obrigatórios sejam preenchidos corretamente.
+
+Cálculo Automático
+Valor Final:
+O sistema calcula automaticamente o valor total da venda baseado na quantidade e valor unitário inseridos.
+Adição Dinâmica de Linhas
+
+Adicionar e Excluir Linhas:
+Os usuários podem adicionar novas linhas dinamicamente para registrar múltiplas vendas em uma única sessão.
+Funcionalidade de exclusão de linhas para remover vendas indesejadas.
+
+Opções Opcionais
+Salvar e Enviar Relatório:
+Opção de especificar um diretório para salvar o relatório gerado em formato Excel.
+Opção de fornecer um endereço de e-mail para envio automático do relatório por e-mail.
+
+Validações
+Validação de Entrada:
+Implementação de validações para garantir que a quantidade seja um número inteiro e o valor unitário seja um número válido.
+
+Requisitos de Ambiente
+
+Requisitos de Software
+Python 3.x
+Flask 2.x
+Pandas 1.x
+Flask-Mail 0.9.x
+  
+Configuração do Ambiente
+Clone o repositório do sistema de registro de vendas.
+  
+Crie um ambiente virtual (recomendado):
+bash
+Copiar código
+python -m venv venv
+  
+Ative o ambiente virtual:
+Windows:
+bash
+  
+Copiar código
+venv\Scripts\activate
+  
+Unix/MacOS:
+bash
+Copiar código
+source venv/bin/activate
+  
+Instale as dependências:
+bash
+  
+Copiar código
+pip install -r requirements.txt
+
+Configure as variáveis de ambiente para o envio de e-mails (SMTP).
+Instalação e Execução
+Após configurar o ambiente e instalar as dependências, execute a aplicação Flask:
+bash
+Copiar código
+python app.py
+Acesse o sistema através do navegador web, geralmente em http://localhost:5000.
+
+Considerações Finais
+Este documento fornece uma visão geral detalhada do Sistema de Registro de Vendas, abrangendo desde a arquitetura até os detalhes de implementação, configuração e uso. Certifique-se de ajustar e expandir esta documentação conforme necessário para refletir especificidades adicionais ou alterações futuras no sistema.
