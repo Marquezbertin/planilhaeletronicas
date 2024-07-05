@@ -1,0 +1,90 @@
+Casos de Uso do Sistema de Registro de Vendas
+1. Registrar Nova Venda
+Ator Primário: Usuário do sistema
+Objetivo: Registrar detalhes de uma nova venda.
+
+Descrição: O usuário acessa o sistema e preenche os campos obrigatórios (código de venda, data, ID da loja, produto, quantidade e valor unitário) para registrar uma nova venda. Após preenchidos, o sistema calcula automaticamente o valor final da venda.
+
+2. Adicionar Nova Linha de Venda
+Ator Primário: Usuário do sistema
+Objetivo: Adicionar uma nova linha para registrar múltiplas vendas.
+
+Descrição: O usuário tem a opção de adicionar uma nova linha dinamicamente no formulário de registro de vendas. Isso permite que várias vendas sejam registradas em uma única sessão, simplificando o processo de entrada de dados para múltiplos produtos ou transações.
+
+3. Excluir Venda Registrada
+Ator Primário: Usuário do sistema
+Objetivo: Excluir uma venda registrada que não seja mais necessária.
+
+Descrição: O usuário pode remover uma linha de venda específica, o que é útil para corrigir erros de entrada de dados ou remover vendas erroneamente registradas.
+
+4. Salvar Relatório de Vendas
+Ator Primário: Usuário do sistema
+Objetivo: Salvar o relatório de vendas gerado em formato Excel.
+
+Descrição: Após o registro das vendas, o usuário pode optar por salvar o relatório de vendas em um diretório específico. Isso é útil para manter um registro local das transações realizadas.
+
+5. Enviar Relatório de Vendas por E-mail
+Ator Primário: Usuário do sistema
+Objetivo: Enviar o relatório de vendas por e-mail para um destinatário específico.
+
+Descrição: O usuário pode fornecer um endereço de e-mail para onde o relatório de vendas em formato Excel será enviado automaticamente. Essa funcionalidade é útil para compartilhar informações de vendas com outras partes interessadas de forma conveniente e rápida.
+
+6. Validar Quantidade de Produtos
+Ator Primário: Sistema
+Objetivo: Garantir que a quantidade de produtos seja um número inteiro válido.
+
+Descrição: Antes de aceitar o registro de uma venda, o sistema valida se a quantidade de produtos inserida é um número inteiro válido. Caso contrário, uma mensagem de erro é exibida solicitando que o usuário corrija o campo.
+
+7. Validar Valor Unitário dos Produtos
+Ator Primário: Sistema
+Objetivo: Garantir que o valor unitário dos produtos seja um número válido.
+
+Descrição: O sistema verifica se o valor unitário dos produtos inserido pelo usuário é um número válido. Caso contrário, uma mensagem de erro é exibida solicitando uma correção.
+
+8. Editar Venda Registrada
+Ator Primário: Usuário do sistema
+Objetivo: Editar os detalhes de uma venda já registrada.
+
+Descrição: Após o registro inicial, o usuário pode editar os detalhes de uma venda específica, como código de venda, data, ID da loja, produto, quantidade e valor unitário. Isso permite correções ou ajustes necessários nas informações registradas.
+
+9. Visualizar Relatório de Vendas
+Ator Primário: Usuário do sistema
+Objetivo: Visualizar o relatório de vendas gerado em formato Excel.
+
+Descrição: Após a geração do relatório de vendas em formato Excel, o usuário pode visualizar o conteúdo do relatório diretamente na interface do sistema. Isso permite revisar as informações registradas antes de salvar ou enviar o relatório.
+
+10. Exportar Relatório de Vendas para PDF
+Ator Primário: Usuário do sistema
+Objetivo: Exportar o relatório de vendas gerado para formato PDF.
+
+Descrição: Além de salvar o relatório em formato Excel, o usuário pode optar por exportá-lo para PDF. Essa funcionalidade facilita o compartilhamento e a distribuição do relatório em um formato amplamente aceito e fácil de visualizar.
+
+11. Filtrar Vendas por Data
+Ator Primário: Usuário do sistema
+Objetivo: Filtrar vendas registradas com base em um intervalo de datas específico.
+
+Descrição: O usuário pode aplicar filtros para visualizar apenas as vendas que ocorreram dentro de um período de datas específico. Isso facilita a análise de vendas em um período específico e a geração de relatórios segmentados.
+
+12. Validar Formato de Data
+Ator Primário: Sistema
+Objetivo: Garantir que a data inserida no registro de vendas esteja no formato correto.
+
+Descrição: Antes de aceitar o registro de uma venda, o sistema valida se a data inserida pelo usuário está no formato correto (YYYY-MM-DD). Caso contrário, uma mensagem de erro é exibida solicitando uma correção.
+
+13. Gerar Relatório de Vendas Consolidado
+Ator Primário: Usuário do sistema
+Objetivo: Gerar um relatório consolidado que inclua todas as vendas registradas.
+
+Descrição: Além de permitir a geração de relatórios individuais por sessão de usuário, o sistema também pode gerar um relatório consolidado que inclui todas as vendas registradas até o momento. Isso é útil para análises de vendas mais abrangentes e relatórios periódicos.
+
+14. Importar Dados de Vendas de Arquivo Externo
+Ator Primário: Usuário do sistema
+Objetivo: Importar dados de vendas de um arquivo externo (CSV, por exemplo).
+
+Descrição: O usuário tem a opção de importar dados de vendas de um arquivo externo, como um arquivo CSV. Isso permite a integração com outros sistemas ou a importação de grandes volumes de dados de vendas de uma só vez.
+
+15. Configurar Configurações de E-mail
+Ator Primário: Administrador do sistema
+Objetivo: Configurar as configurações de e-mail para envio automático de relatórios.
+
+Descrição: O administrador do sistema pode configurar as variáveis de ambiente necessárias para o envio de e-mails automáticos. Isso inclui definir o servidor SMTP, porta, autenticação e remetente padrão para os e-mails enviados pelo sistema.
