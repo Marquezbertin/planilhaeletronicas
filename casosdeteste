@@ -1,0 +1,41 @@
+Casos de Teste para Sistema de Registro de Vendas em Flask
+1. Teste de Registro de Nova Venda
+Descrição: Verificar se é possível registrar uma nova venda com todos os campos obrigatórios preenchidos corretamente.
+Entrada: Submeter um formulário com todos os campos preenchidos corretamente (código de venda, data, ID da loja, produto, quantidade e valor unitário).
+Saída Esperada: A venda é registrada com sucesso no sistema e o usuário é redirecionado para a página inicial com uma mensagem de sucesso.
+2. Teste de Edição de Venda Registrada
+Descrição: Verificar se é possível editar os detalhes de uma venda já registrada.
+Entrada: Editar um campo de uma venda existente (por exemplo, alterar a quantidade vendida).
+Saída Esperada: A venda é atualizada corretamente no sistema e o valor final é recalculado e exibido corretamente.
+3. Teste de Exclusão de Venda Registrada
+Descrição: Verificar se é possível excluir uma venda registrada.
+Entrada: Clicar no botão "Excluir" ao lado de uma venda específica.
+Saída Esperada: A venda é removida com sucesso do sistema e o usuário recebe uma confirmação visual disso.
+4. Teste de Validação de Quantidade de Produtos
+Descrição: Verificar se o sistema valida corretamente a entrada de quantidade de produtos como números inteiros.
+Entrada: Inserir uma quantidade inválida (por exemplo, texto) no campo de quantidade durante o registro.
+Saída Esperada: O sistema exibe uma mensagem de erro indicando que a quantidade deve ser um número inteiro e não registra a venda até que o problema seja corrigido.
+5. Teste de Validação de Valor Unitário dos Produtos
+Descrição: Verificar se o sistema valida corretamente a entrada de valor unitário como números válidos.
+Entrada: Inserir um valor unitário inválido (por exemplo, texto) no campo de valor unitário durante o registro.
+Saída Esperada: O sistema exibe uma mensagem de erro indicando que o valor unitário deve ser um número válido e não registra a venda até que o problema seja corrigido.
+6. Teste de Geração e Envio de Relatório por E-mail
+Descrição: Verificar se o sistema gera corretamente o relatório de vendas em formato Excel e o envia por e-mail.
+Entrada: Registrar várias vendas e fornecer um endereço de e-mail válido para o envio.
+Saída Esperada: O relatório é gerado e enviado com sucesso para o destinatário especificado, sem erros no processo de envio por e-mail.
+7. Teste de Filtragem de Vendas por Data
+Descrição: Verificar se o sistema filtra corretamente as vendas com base em um intervalo de datas específico.
+Entrada: Aplicar um filtro de datas e verificar as vendas listadas.
+Saída Esperada: A lista de vendas exibe apenas as vendas que ocorreram dentro do intervalo de datas especificado, sem erros na filtragem.
+8. Teste de Exportação de Relatório para PDF
+Descrição: Verificar se o sistema exporta corretamente o relatório de vendas para formato PDF.
+Entrada: Gerar o relatório de vendas e selecionar a opção de exportar para PDF.
+Saída Esperada: O PDF é gerado com todas as vendas registradas, mantendo o formato e os dados do relatório original, sem erros na exportação para PDF.
+9. Teste de Importação de Dados de Vendas de Arquivo Externo
+Descrição: Verificar se o sistema importa corretamente dados de vendas de um arquivo externo (por exemplo, CSV).
+Entrada: Selecionar um arquivo CSV com dados de vendas e importá-lo para o sistema.
+Saída Esperada: Os dados de vendas do arquivo CSV são importados com sucesso e exibidos corretamente no sistema, sem erros na importação.
+10. Teste de Configuração de E-mail para Envio Automático
+Descrição: Verificar se o administrador pode configurar corretamente as variáveis de ambiente para o envio automático de e-mails.
+Entrada: Configurar o servidor SMTP, porta, autenticação e remetente padrão para os e-mails enviados pelo sistema.
+Saída Esperada: As configurações de e-mail são salvas corretamente e o envio de e-mails automáticos funciona conforme esperado, sem erros na configuração.
