@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Registro de Vendas</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -19,59 +20,6 @@
       color: #007bff;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
-
-    table,
-    th,
-    td {
-      border: 1px solid #dee2e6;
-    }
-
-    th,
-    td {
-      padding: 12px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #007bff;
-      color: #ffffff;
-    }
-
-    tbody tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-
-    input[type="text"],
-    input[type="number"],
-    input[type="date"],
-    input[type="email"] {
-      width: 100%;
-      padding: 8px;
-      box-sizing: border-box;
-      border: 1px solid #ced4da;
-      border-radius: 4px;
-    }
-
-    button {
-      background-color: #007bff;
-      color: #ffffff;
-      border: none;
-      padding: 10px 20px;
-      margin: 5px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
     .hidden {
       display: none;
     }
@@ -81,106 +29,55 @@
       margin-top: 20px;
       color: #6c757d;
     }
-
-    @media (max-width: 768px) {
-
-      table,
-      thead,
-      tbody,
-      th,
-      td,
-      tr {
-        display: block;
-      }
-
-      tr {
-        margin-bottom: 15px;
-      }
-
-      th,
-      td {
-        text-align: right;
-      }
-
-      th {
-        display: none;
-      }
-
-      td {
-        position: relative;
-        padding-left: 50%;
-      }
-
-      td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        text-align: left;
-        font-weight: bold;
-      }
-
-      input[type="text"],
-      input[type="number"],
-      input[type="date"],
-      input[type="email"] {
-        width: calc(100% - 20px);
-        margin-left: 10px;
-      }
-
-      button {
-        width: calc(100% - 20px);
-        margin-left: 10px;
-        margin-right: 10px;
-      }
-    }
   </style>
 </head>
 
 <body>
-  <h1>Registro de Vendas</h1>
-  <form action="/upload" method="post" onsubmit="return validateForm()">
-    <table>
-      <thead>
-        <tr>
-          <th>Código Venda</th>
-          <th>Data</th>
-          <th>ID Loja</th>
-          <th>Produto</th>
-          <th>Quantidade</th>
-          <th>Valor Unitário</th>
-          <th class="hidden">Valor Total</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody id="sales-table">
-        <tr>
-          <td data-label="Código Venda"><input type="text" name="codigo_venda" oninput="validateCodigoVenda(this)"></td>
-          <td data-label="Data"><input type="date" name="data"></td>
-          <td data-label="ID Loja"><input type="text" name="id_loja"></td>
-          <td data-label="Produto"><input type="text" name="produto"></td>
-          <td data-label="Quantidade"><input type="number" name="quantidade" oninput="validateQuantidade(this)"></td>
-          <td data-label="Valor Unitário"><input type="text" name="valor_unitario"
-              oninput="validateValorUnitario(this); calculateValorFinal(this); checkLastRow(this)"></td>
-          <td class="hidden" data-label="Valor Total"><input type="text" name="valor_final"></td>
-          <td data-label="Ações"><button type="button" onclick="deleteRow(this)">Excluir</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <label for="directory">Escolha o diretório para salvar o relatório (opcional):</label>
-    <input type="text" id="directory" name="directory" placeholder="Ex: /caminho/para/salvar">
-    <br><br>
-    <label for="email">Email para envio do relatório (opcional):</label>
-    <input type="email" id="email" name="email">
-    <br><br>
-    <button type="button" onclick="addRow()">Adicionar Linha</button>
-    <button type="submit">Enviar</button>
-  </form>
-
-  <div class="footer">
-    Orgulhosamente desenvolvido por @Bruno Bertin Marquez 2024
+  <div class="container">
+    <h1>Registro de Vendas</h1>
+    <form action="/upload" method="post" onsubmit="return validateForm()">
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th>Código Venda</th>
+              <th>Data</th>
+              <th>ID Loja</th>
+              <th>Produto</th>
+              <th>Quantidade</th>
+              <th>Valor Unitário</th>
+              <th class="hidden">Valor Total</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="sales-table">
+            <tr>
+              <td data-label="Código Venda"><input type="text" name="codigo_venda" class="form-control" oninput="validateCodigoVenda(this)"></td>
+              <td data-label="Data"><input type="date" name="data" class="form-control"></td>
+              <td data-label="ID Loja"><input type="text" name="id_loja" class="form-control"></td>
+              <td data-label="Produto"><input type="text" name="produto" class="form-control"></td>
+              <td data-label="Quantidade"><input type="number" name="quantidade" class="form-control" oninput="validateQuantidade(this)"></td>
+              <td data-label="Valor Unitário"><input type="text" name="valor_unitario" class="form-control" oninput="validateValorUnitario(this); calculateValorFinal(this); checkLastRow(this)"></td>
+              <td class="hidden" data-label="Valor Total"><input type="text" name="valor_final" class="form-control"></td>
+              <td data-label="Ações"><button type="button" class="btn btn-danger" onclick="deleteRow(this)">Excluir</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="form-group">
+        <label for="directory">Escolha o diretório para salvar o relatório (opcional):</label>
+        <input type="text" id="directory" name="directory" class="form-control" placeholder="Ex: /caminho/para/salvar">
+      </div>
+      <div class="form-group">
+        <label for="email">Email para envio do relatório (opcional):</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Ex: email@example.com">
+      </div>
+      <button type="button" class="btn btn-primary" onclick="addRow()">Adicionar Linha</button>
+      <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+    <div class="footer">
+      Orgulhosamente desenvolvido por @Bruno Bertin Marquez 2024
+    </div>
   </div>
 
   <script>
